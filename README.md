@@ -5,7 +5,9 @@
 
 ## Overview
 
-This terraform module will provision a MS SQL database server and all its dependencies
+This terraform module will provision a MS SQL database server and an optional extended audit policy. This module depends on the below mentioned resources which must be existing at the time of creation of this module. 
+- Resource Group
+- Storage Account (for extended audit policy)
 
 ## Pre-Commit hooks
 
