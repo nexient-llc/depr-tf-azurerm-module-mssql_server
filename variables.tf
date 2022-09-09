@@ -114,19 +114,19 @@ variable "storage_account_access_key" {
   default     = ""
 }
 
-variable "allowAccessToAzureServices" {
+variable "allow_access_to_azure_services" {
   description = "If true, it enables all the azure services to access the database server. "
   type        = bool
   default     = true
 }
 
-variable "allowFirewallIpList" {
+variable "allow_firewall_ip_list" {
   description = "A list of IP Address to whitelist, in order to access the database server"
   type        = list(string)
   default     = []
 }
 
-variable "allowFirewallIpRangesList" {
+variable "allow_firewall_ip_ranges_list" {
   description = "A list of IP Address ranges to whitelist, in order to access the database server"
   type = list(object({
     start_ip_address = string

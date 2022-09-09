@@ -21,15 +21,15 @@ locals {
 
   # Variables related to the firewall rules
 
-  azure_services_firewall_rule = var.allowAccessToAzureServices ? [{
+  azure_services_firewall_rule = var.allow_access_to_azure_services ? [{
     start_ip_address = "0.0.0.0"
     end_ip_address   = "0.0.0.0"
   }] : []
 
-  allowFirewallIpList = [for ip_address in var.allowFirewallIpList : {
+  allow_firewall_ip_list = [for ip_address in var.allow_firewall_ip_list : {
     start_ip_address = ip_address
     end_ip_address   = ip_address
   }]
 
-  all_firewall_rules = concat(local.azure_services_firewall_rule, local.allowFirewallIpList, var.allowFirewallIpRangesList)
+  all_firewall_rules = concat(local.azure_services_firewall_rule, local.allow_firewall_ip_list, var.allow_firewall_ip_ranges_list)
 }

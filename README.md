@@ -152,9 +152,9 @@ No modules.
 | <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | Number of days to retain the logs in the storage account | `number` | `30` | no |
 | <a name="input_storage_endpoint"></a> [storage\_endpoint](#input\_storage\_endpoint) | The blob storage that will hold the extended auditing logs | `string` | `""` | no |
 | <a name="input_storage_account_access_key"></a> [storage\_account\_access\_key](#input\_storage\_account\_access\_key) | The access key of the storage account | `string` | `""` | no |
-| <a name="input_allowAccessToAzureServices"></a> [allowAccessToAzureServices](#input\_allowAccessToAzureServices) | If true, it enables all the azure services to access the database server. | `bool` | `true` | no |
-| <a name="input_allowFirewallIpList"></a> [allowFirewallIpList](#input\_allowFirewallIpList) | A list of IP Address to whitelist, in order to access the database server | `list(string)` | `[]` | no |
-| <a name="input_allowFirewallIpRangesList"></a> [allowFirewallIpRangesList](#input\_allowFirewallIpRangesList) | A list of IP Address ranges to whitelist, in order to access the database server | <pre>list(object({<br>    start_ip_address = string<br>    end_ip_address   = string<br>  }))</pre> | `[]` | no |
+| <a name="input_allow_access_to_azure_services"></a> [allow\_access\_to\_azure\_services](#input\_allow\_access\_to\_azure\_services) | If true, it enables all the azure services to access the database server. | `bool` | `true` | no |
+| <a name="input_allow_firewall_ip_list"></a> [allow\_firewall\_ip\_list](#input\_allow\_firewall\_ip\_list) | A list of IP Address to whitelist, in order to access the database server | `list(string)` | `[]` | no |
+| <a name="input_allow_firewall_ip_ranges_list"></a> [allow\_firewall\_ip\_ranges\_list](#input\_allow\_firewall\_ip\_ranges\_list) | A list of IP Address ranges to whitelist, in order to access the database server | <pre>list(object({<br>    start_ip_address = string<br>    end_ip_address   = string<br>  }))</pre> | `[]` | no |
 | <a name="input_custom_tags"></a> [custom\_tags](#input\_custom\_tags) | A map of custom tags to be attached to this SQL Server instance | `map(string)` | `{}` | no |
 
 ## Outputs
