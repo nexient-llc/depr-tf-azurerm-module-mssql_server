@@ -72,10 +72,10 @@ func (suite *TerraTestSuite) TestOutputsWithAzureAPI() {
 	// NOTE: "subscriptionID" is overridden by the environment variable "ARM_SUBSCRIPTION_ID". <>
 	subscriptionID := ""
 	server := azure.GetSQLServer(suite.T(), expectedRgName, expectedSqlServerName, subscriptionID)
-	suite.Equal(server.ID, actualServerId, "The Server IDs should match")
-	suite.Equal(server.Name, expectedSqlServerName, "The Server Name should match")
-	suite.Equal(server.AdministratorLogin, expectedServerAdminUsername, "The admin Server should match")
-	suite.Equal(server.FullyQualifiedDomainName, actualServerFqdn, "The FQDNs should match")
+	suite.Equal(*server.ID, actualServerId, "The Server IDs should match")
+	suite.Equal(*server.Name, expectedSqlServerName, "The Server Name should match")
+	suite.Equal(*server.AdministratorLogin, expectedServerAdminUsername, "The admin Server should match")
+	suite.Equal(*server.FullyQualifiedDomainName, actualServerFqdn, "The FQDNs should match")
 
 	suite.Equal(actualServerName, expectedSqlServerName, "The server Name tf output should match with input server name")
 	suite.Equal(actualServerAdminUsername, expectedServerAdminUsername, "The admin username tf output should match with input server admin username")

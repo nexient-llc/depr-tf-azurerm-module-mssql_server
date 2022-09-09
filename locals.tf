@@ -18,4 +18,18 @@ locals {
   }
 
   tags = merge(local.default_tags, var.custom_tags)
+
+  # Variables related to the firewall rules
+
+  azure_services_firewall_rule = var.allowAccessToAzureServices ? [{
+    start_ip_address = "0.0.0.0"
+    end_ip_address   = "0.0.0.0"
+  }] : []
+
+  allowFirewallIpList = [for ip_address in var.allowFirewallIpList : {
+    start_ip_address = ip_address
+    end_ip_address   = ip_address
+  }]
+
+  all_firewall_rules = concat(local.azure_services_firewall_rule, local.allowFirewallIpList, var.allowFirewallIpRangesList)
 }

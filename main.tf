@@ -53,3 +53,12 @@ resource "azurerm_mssql_server_extended_auditing_policy" "server_auditing_policy
   storage_account_access_key_is_secondary = false
   storage_endpoint                        = var.storage_endpoint
 }
+
+resource "azurerm_mssql_firewall_rule" "firewall_rules" {
+  count = length(local.all_firewall_rules)
+
+  name             = "FirewallRule_${count.index}_${replace(local.all_firewall_rules[count.index].start_ip_address, ".", "_")}"
+  server_id        = azurerm_mssql_server.sql_server.id
+  start_ip_address = local.all_firewall_rules[count.index].start_ip_address
+  end_ip_address   = local.all_firewall_rules[count.index].end_ip_address
+}

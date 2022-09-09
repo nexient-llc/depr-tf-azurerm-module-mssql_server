@@ -114,6 +114,28 @@ variable "storage_account_access_key" {
   default     = ""
 }
 
+variable "allowAccessToAzureServices" {
+  description = "If true, it enables all the azure services to access the database server. "
+  type        = bool
+  default     = true
+}
+
+variable "allowFirewallIpList" {
+  description = "A list of IP Address to whitelist, in order to access the database server"
+  type        = list(string)
+  default     = []
+}
+
+variable "allowFirewallIpRangesList" {
+  description = "A list of IP Address ranges to whitelist, in order to access the database server"
+  type = list(object({
+    start_ip_address = string
+    end_ip_address   = string
+  }))
+
+  default = []
+}
+
 variable "custom_tags" {
   description = "A map of custom tags to be attached to this SQL Server instance"
   type        = map(string)
