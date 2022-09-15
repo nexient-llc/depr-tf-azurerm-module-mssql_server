@@ -49,3 +49,8 @@ output "identity_pricipal_id" {
   value       = try(azurerm_mssql_server.sql_server.identity[0].principal_id, "")
 
 }
+
+output "auditing_id" {
+  description = "The ID of the MS Sql Server extended Auditing Policy"
+  value       = try(azurerm_mssql_server_extended_auditing_policy.server_auditing_policy[0].id, "")
+}

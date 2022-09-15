@@ -168,4 +168,5 @@ No modules.
 | <a name="output_admin_login_password"></a> [admin\_login\_password](#output\_admin\_login\_password) | Admin Login Password of the MS Sql Server |
 | <a name="output_restorable_dropped_database_ids"></a> [restorable\_dropped\_database\_ids](#output\_restorable\_dropped\_database\_ids) | A list of dropped restorable database IDs on this server |
 | <a name="output_identity_pricipal_id"></a> [identity\_pricipal\_id](#output\_identity\_pricipal\_id) | System Assigned Identity Principal ID |
+| <a name="output_auditing_id"></a> [auditing\_id](#output\_auditing\_id) | The ID of the MS Sql Server extended Auditing Policy |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
