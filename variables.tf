@@ -97,19 +97,19 @@ variable "extended_auditing_enabled" {
 }
 
 variable "retention_in_days" {
-  description = "Number of days to retain the logs in the storage account"
+  description = "Number of days to retain the logs in the storage account. Required if extended_auditing_enabled=true"
   type        = number
   default     = 30
 }
 
 variable "storage_endpoint" {
-  description = "The blob storage that will hold the extended auditing logs"
+  description = "The blob storage (primary_blob_endpoint) that will hold the extended auditing logs. Required if extended_auditing_enabled=true"
   type        = string
   default     = ""
 }
 
 variable "storage_account_access_key" {
-  description = "The access key of the storage account"
+  description = "The access key (primary_access_key) of the storage account. Required if extended_auditing_enabled=true"
   type        = string
   default     = ""
 }
