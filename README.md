@@ -149,9 +149,9 @@ No modules.
 | <a name="input_public_network_access_enabled"></a> [public\_network\_access\_enabled](#input\_public\_network\_access\_enabled) | Whether public network access is enabled for this server? Defaults to true | `bool` | `true` | no |
 | <a name="input_outbound_network_restriction_enabled"></a> [outbound\_network\_restriction\_enabled](#input\_outbound\_network\_restriction\_enabled) | Whether outbound network traffic is restricted for this server. Defaults to false | `bool` | `false` | no |
 | <a name="input_extended_auditing_enabled"></a> [extended\_auditing\_enabled](#input\_extended\_auditing\_enabled) | Whether the extended auditing should be enabled? | `bool` | `false` | no |
-| <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | Number of days to retain the logs in the storage account | `number` | `30` | no |
-| <a name="input_storage_endpoint"></a> [storage\_endpoint](#input\_storage\_endpoint) | The blob storage that will hold the extended auditing logs | `string` | `""` | no |
-| <a name="input_storage_account_access_key"></a> [storage\_account\_access\_key](#input\_storage\_account\_access\_key) | The access key of the storage account | `string` | `""` | no |
+| <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | Number of days to retain the logs in the storage account. Required if extended\_auditing\_enabled=true | `number` | `30` | no |
+| <a name="input_storage_endpoint"></a> [storage\_endpoint](#input\_storage\_endpoint) | The blob storage (primary\_blob\_endpoint) that will hold the extended auditing logs. Required if extended\_auditing\_enabled=true | `string` | `""` | no |
+| <a name="input_storage_account_access_key"></a> [storage\_account\_access\_key](#input\_storage\_account\_access\_key) | The access key (primary\_access\_key) of the storage account. Required if extended\_auditing\_enabled=true | `string` | `""` | no |
 | <a name="input_allow_access_to_azure_services"></a> [allow\_access\_to\_azure\_services](#input\_allow\_access\_to\_azure\_services) | If true, it enables all the azure services to access the database server. | `bool` | `true` | no |
 | <a name="input_allow_firewall_ip_list"></a> [allow\_firewall\_ip\_list](#input\_allow\_firewall\_ip\_list) | A list of IP Address to whitelist, in order to access the database server | `list(string)` | `[]` | no |
 | <a name="input_allow_firewall_ip_ranges_list"></a> [allow\_firewall\_ip\_ranges\_list](#input\_allow\_firewall\_ip\_ranges\_list) | A list of IP Address ranges to whitelist, in order to access the database server | <pre>list(object({<br>    start_ip_address = string<br>    end_ip_address   = string<br>  }))</pre> | `[]` | no |
@@ -168,4 +168,5 @@ No modules.
 | <a name="output_admin_login_password"></a> [admin\_login\_password](#output\_admin\_login\_password) | Admin Login Password of the MS Sql Server |
 | <a name="output_restorable_dropped_database_ids"></a> [restorable\_dropped\_database\_ids](#output\_restorable\_dropped\_database\_ids) | A list of dropped restorable database IDs on this server |
 | <a name="output_identity_pricipal_id"></a> [identity\_pricipal\_id](#output\_identity\_pricipal\_id) | System Assigned Identity Principal ID |
+| <a name="output_auditing_id"></a> [auditing\_id](#output\_auditing\_id) | The ID of the MS Sql Server extended Auditing Policy |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
